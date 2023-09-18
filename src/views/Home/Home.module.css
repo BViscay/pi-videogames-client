@@ -1,0 +1,10 @@
+.cont {
+  width: 100%;
+  height: max-content;
+  background-image: url("../../assets/landing-bg.png");
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

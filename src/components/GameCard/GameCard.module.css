@@ -1,0 +1,54 @@
+.container {
+  width: 250px;
+  height: 340px;
+  border: solid 1.5px rgb(247, 223, 180);
+  box-shadow: 0 0 7px #fffff4, 0 0 10px #fff780;
+  border-radius: 25px;
+  background-color: rgba(28, 28, 28, 0.8);
+}
+
+.image {
+  width: 250px;
+  height: 150px;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  object-fit: cover;
+}
+
+.textCont {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: medium;
+  color: #a7fff8;
+  font-family: "Russo One", sans-serif;
+  font-weight: lighter;
+  font-size: 20px;
+  margin-bottom: 0;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.genres {
+  font-size: medium;
+  margin-left: 15px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 0;
+  text-align: left;
+}
+
+.genreContainer {
+  left: 0;
+  padding: 2px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
+
+.genre {
+  margin: 0 0 0 0;
+  padding-left: 3px;
+  padding-right: 3px;
+}
