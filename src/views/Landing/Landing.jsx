@@ -1,9 +1,9 @@
 import styles from "../Landing/Landing.module.css";
 import { useNavigate } from "react-router-dom";
-import useSearch from "../../hooks/useSearch";
+import useData from "../../hooks/useData";
 
 export default function Landing() {
-  const { fetchVideogamesData } = useSearch();
+  const { fetchVideogamesData } = useData();
 
   const handleClick = () => {
     fetchVideogamesData();

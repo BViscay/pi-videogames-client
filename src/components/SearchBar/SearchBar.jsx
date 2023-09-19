@@ -35,7 +35,7 @@ export default function SearchBar({ onSearch }) {
           type="search"
           onChange={handleChange}
           value={name}
-          list={name.length >= 1 ? "name" : null}
+          list={name.length >= 3 ? "name" : null}
           placeholder="Busca el juego por su nombre"
           className={styles.searchBarInput}
         />

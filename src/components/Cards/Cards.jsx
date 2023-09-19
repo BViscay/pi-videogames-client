@@ -14,7 +14,7 @@ export default function Cards() {
 
   const activateSpinner = videogames.length;
   const itemsPerPage = 15;
-  const totalSlides = Math.ceil(videogames.length / itemsPerPage);
+  const totalSlides = Math.floor(videogames.length / itemsPerPage);
   const isFirstPage = currentSlide === 0;
   const isLastPage = currentSlide === totalSlides - 1;
 

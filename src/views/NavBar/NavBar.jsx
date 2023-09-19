@@ -5,10 +5,10 @@ import { useNavigate } from "react-router-dom";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Buttons from "../../components/Buttons/Buttons";
 import logo from "../../assets/logo.png";
-import useSearch from "../../hooks/useSearch";
+import useData from "../../hooks/useData";
 
 export default function NavBar() {
-  const { onSearch } = useSearch();
+  const { onSearch } = useData();
   const navigate = useNavigate();
   // const [showButtons, setShowButtons] = useState(false);
 

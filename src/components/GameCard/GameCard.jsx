@@ -6,15 +6,12 @@ export default function GameCard({ gameId, image, name, genres }) {
   const [isClicked, setIsClicked] = useState(false);
 
   const handleCardClick = () => {
-    setIsClicked(!isClicked); // Cambia el estado al hacer clic
+    setIsClicked(!isClicked);
   };
 
   return (
     <Link to={`/videogames/${gameId}`}>
-      <div
-        onClick={handleCardClick} // Agrega un manejador de clic
-        className={styles.container}
-      >
+      <div onClick={handleCardClick} className={styles.container}>
         <div className={styles.image}>
           <div className={styles.image}>
             <img src={image} alt="card-image" className={styles.image} />
