@@ -1,4 +1,4 @@
-import styles from "./filterModal.module.css";
+import styles from "./FilterModal.module.css";
 
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
