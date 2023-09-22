@@ -1,10 +1,10 @@
-import styles from "./Buttons.module.css";
+import styles from "./FiltersBar.module.css";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { getGenres } from "../../redux/sliceGenres";
 import useFilterData from "../../hooks/useFilterData";
 
-export default function GenreSelect() {
+export default function GenreSelect({ handleSideBar }) {
   const allGenres = useSelector(getGenres);
   const [selectedGenre, setSelectedGenre] = useState("Generos");
   const { filterByGenre } = useFilterData();
@@ -13,6 +13,8 @@ export default function GenreSelect() {
     const selectedGenre = event.target.value;
     setSelectedGenre(selectedGenre);
     filterByGenre(selectedGenre);
+    setSelectedGenre("Generos");
+    handleSideBar();
   };
 
   return (

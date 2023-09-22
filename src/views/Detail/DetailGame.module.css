@@ -63,6 +63,12 @@
   border-radius: 6px;
 }
 
+.platforms {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  width: 100%;
+}
+
 .title {
   font-size: 35px;
   color: #a7fff8;

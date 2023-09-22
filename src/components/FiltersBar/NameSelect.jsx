@@ -4,7 +4,7 @@ import { useState } from "react";
 import useFilterData from "../../hooks/useFilterData";
 
 export default function LetterOrderSelect({ handleSideBar }) {
-  const [selectedOrder, setSelectedOrder] = useState("Generos");
+  const [selectedOrder, setSelectedOrder] = useState("");
   const { filterByFirstLetter } = useFilterData();
 
   const handleOrderChange = (event) => {

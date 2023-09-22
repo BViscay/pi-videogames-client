@@ -12,7 +12,7 @@ const useFilterData = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (allVideogames.length > 0) {
+    if (renderVideogames.length < 1) {
       dispatch(setRenderVideogames(allVideogames));
     }
     //eslint-disable-next-line
@@ -20,9 +20,9 @@ const useFilterData = () => {
 
   const filterByGenre = (genre) => {
     if (genre === "Generos") {
-      dispatch(setRenderVideogames(allVideogames));
+      dispatch(setRenderVideogames(renderVideogames));
     } else {
-      const genreFiltered = allVideogames.filter((game) =>
+      const genreFiltered = renderVideogames.filter((game) =>
         game.genres.includes(genre)
       );
 
@@ -32,9 +32,9 @@ const useFilterData = () => {
 
   const filterByFirstLetter = (order) => {
     if (order === "Order") {
-      dispatch(setRenderVideogames(allVideogames));
+      dispatch(setRenderVideogames(renderVideogames));
     } else if (order === "A-Z") {
-      const ascendentOrder = [...allVideogames];
+      const ascendentOrder = [...renderVideogames];
       ascendentOrder.sort((a, b) => {
         const nameA = a.name.toUpperCase();
         const nameB = b.name.toUpperCase();
@@ -44,7 +44,7 @@ const useFilterData = () => {
 
       dispatch(setRenderVideogames(ascendentOrder));
     } else if (order === "Z-A") {
-      const descendentOrder = [...allVideogames];
+      const descendentOrder = [...renderVideogames];
       descendentOrder.sort((a, b) => {
         const nameA = a.name.toUpperCase();
         const nameB = b.name.toUpperCase();
@@ -58,9 +58,9 @@ const useFilterData = () => {
 
   const filterByRating = (rating) => {
     if (rating === "rating") {
-      dispatch(setRenderVideogames(allVideogames));
+      dispatch(setRenderVideogames(renderVideogames));
     } else if (rating === "Mayor") {
-      const descendentOrder = [...allVideogames];
+      const descendentOrder = [...renderVideogames];
       descendentOrder.sort((a, b) => {
         const nameA = a.rating;
         const nameB = b.rating;
@@ -69,7 +69,7 @@ const useFilterData = () => {
       });
       dispatch(setRenderVideogames(descendentOrder));
     } else if (rating === "Menor") {
-      const ascendentOrder = [...allVideogames];
+      const ascendentOrder = [...renderVideogames];
       ascendentOrder.sort((a, b) => {
         const nameA = a.rating;
         const nameB = b.rating;
@@ -82,18 +82,22 @@ const useFilterData = () => {
 
   const filterByOrigin = (order) => {
     if (order === "Todos") {
-      dispatch(setRenderVideogames(allVideogames));
+      dispatch(setRenderVideogames(renderVideogames));
     } else if (order === "BDD") {
-      const BDDFilter = allVideogames.filter(
+      const BDDFilter = renderVideogames.filter(
         (videogame) => videogame.createInDb === true
       );
       dispatch(setRenderVideogames(BDDFilter));
     } else if (order === "API") {
-      const APIFilter = allVideogames.filter(
+      const APIFilter = renderVideogames.filter(
         (videogame) => !videogame.createInDb
       );
       dispatch(setRenderVideogames(APIFilter));
     }
+  };
+
+  const resetFilters = () => {
+    dispatch(setRenderVideogames(allVideogames));
   };
 
   return {
@@ -102,6 +106,7 @@ const useFilterData = () => {
     filterByFirstLetter,
     filterByRating,
     filterByOrigin,
+    resetFilters,
   };
 };
 

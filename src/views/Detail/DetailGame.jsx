@@ -65,7 +65,7 @@ export default function DetailGame() {
                   </span>
                 </p>
               </div>
-              <div>
+              <div className={styles.platforms}>
                 <p className={styles.subtitle}>
                   Plataformas:{" "}
                   <span className={styles.resalt}>
