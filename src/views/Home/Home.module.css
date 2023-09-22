@@ -1,10 +1,11 @@
 .cont {
   width: 100%;
+  min-height: 900px;
   height: max-content;
+  position: absolute;
   background-image: url("../../assets/landing-bg.png");
   background-size: cover;
   background-position: center;
-  position: absolute;
   top: 0;
   left: 0;
 }

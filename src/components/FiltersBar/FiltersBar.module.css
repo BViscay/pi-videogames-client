@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  position: absolute;
+  align-items: flex-start;
+  align-items: center;
+  padding-top: 30px;
+  top: 101px;
+  right: 0px;
+  width: 220px;
+  height: 800px;
+  background-color: rgba(28, 28, 28, 0.9);
+  border-bottom: solid 1px rgb(0, 247, 255);
+  box-shadow: 0 0 7px #d4fffd, 0 0 10px #a7fff8;
+  z-index: 10;
+}
+
+.select {
+  width: 150px;
+  height: 37px;
+  border-radius: 10px;
+  padding-left: 10px;
+  background-color: rgba(28, 28, 28, 0.95);
+  font-size: 18px;
+  color: #a7fff8;
+  font-family: "Russo One", sans-serif;
+  font-weight: bolder;
+  text-decoration: rgb(0, 255, 255);
+  box-shadow: 0 0 7px #d4fffd, 0 0 10px #a7fff8;
+  cursor: pointer;
+}
+
+.check {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 50px;
+  width: 150px;
+}
+
+.origin {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(28, 28, 28, 0.9);
+  border-radius: 100px;
+  border: 2px solid #a7fff8; /* Color del borde */
+  color: #a7fff8;
+  font-family: "Russo One", sans-serif;
+  font-weight: bolder;
+  margin-right: 10px; /* Espacio entre el cuadro y el texto */
+  cursor: pointer; /* Cambia el cursor al pasar por encima del cuadro */
+  border-radius: 4px; /* Agrega bordes redondeados al cuadro */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Agrega una sombra al cuadro */
+}

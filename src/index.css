@@ -2,7 +2,8 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
+  background-size: cover;
+  background-position: center;
   color-scheme: light dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -11,22 +12,22 @@
   -webkit-text-size-adjust: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
   display: flex;
   min-height: 100vh;
   place-items: center;
   min-width: 320px;
-  background-color: #1c1c1c;
+  background-size: cover;
+  background-position: center;
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+}
+a:visited,
+a:focus {
+  color: inherit;
 }
 
 button:focus,
@@ -37,7 +38,9 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #1c1c1c;
+
+    background-size: cover;
+    background-position: center;
   }
   a:hover {
     color: #747bff;

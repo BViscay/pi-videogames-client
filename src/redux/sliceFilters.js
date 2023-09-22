@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   filterByName: {},
+  renderVideogames: [],
 };
 
 const filtersHandler = createSlice({
@@ -11,11 +12,15 @@ const filtersHandler = createSlice({
     setFilterByName: (state, action) => {
       state.filterByName = action.payload;
     },
+    setRenderVideogames: (state, action) => {
+      state.renderVideogames = action.payload;
+    },
   },
 });
 
 export const getFilterByName = (state) => state.filterVg.filterByName;
+export const getRenderVideogames = (state) => state.filterVg.renderVideogames;
 
-export const { setFilterByName } = filtersHandler.actions;
+export const { setFilterByName, setRenderVideogames } = filtersHandler.actions;
 
 export default filtersHandler.reducer;

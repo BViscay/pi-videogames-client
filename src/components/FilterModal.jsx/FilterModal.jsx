@@ -15,7 +15,7 @@ export default function FilterModal({ onClose }) {
       <div className={styles.content}>
         <div className={styles.modal}>
           <h2 className={styles.text}>Videogames Filtrados</h2>
-          <div className={styles.cardsContainer}>
+          <div onClick={onClose} className={styles.cardsContainer}>
             {videogame.map((game) => (
               <GameCard
                 key={game.id}
@@ -23,7 +23,7 @@ export default function FilterModal({ onClose }) {
                 image={game.image}
                 name={game.name}
                 genres={game.genres}
-                onActionClick={() => navigate("/game-detail/" + game.id)}
+                onClick={() => navigate("/game-detail/" + game.id)}
               />
             ))}
           </div>

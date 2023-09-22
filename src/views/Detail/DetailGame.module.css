@@ -1,3 +1,17 @@
+.bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../assets/landing-bg.png");
+  background-size: cover;
+  background-position: center;
+}
+
 .container {
   display: flex;
   flex-direction: row;
@@ -5,6 +19,7 @@
   margin-top: 7rem;
   width: 150vh;
   height: 75vh;
+  background-color: rgba(28, 28, 28, 0.9);
   border: solid 1.5px rgb(247, 223, 180);
   box-shadow: 0 0 7px #fffff4, 0 0 10px #fff780;
   border-radius: 25px;
@@ -32,12 +47,40 @@
   text-align: left;
 }
 
+.descriptionContainer {
+  padding-right: 5px;
+  margin-bottom: 20px;
+  height: 290px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+.descriptionContainer::-webkit-scrollbar {
+  width: 5px;
+}
+
+.descriptionContainer::-webkit-scrollbar-thumb {
+  background-color: #a7fff8;
+  border-radius: 6px;
+}
+
 .title {
-  font-size: medium;
+  font-size: 35px;
   color: #a7fff8;
   font-family: "Russo One", sans-serif;
   font-weight: lighter;
-  font-size: 40px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.idCont {
+  display: flex;
+  gap: 20px;
+}
+
+.id {
+  color: #fff780;
+  margin-top: 5px;
+  padding-top: 0;
 }
 
 .name {
@@ -49,8 +92,46 @@
   font-family: "Russo One", sans-serif;
 }
 
+.arrayCont {
+  display: flex;
+  gap: 100px;
+}
+
 .subtitle {
   color: aliceblue;
   font-weight: bold;
   margin-top: 0;
+}
+
+.button {
+  margin-bottom: 20px;
+  width: 50px;
+  height: 40px;
+  border-radius: 10px;
+  padding: 0;
+  margin-top: 12px;
+  margin-right: 12px;
+  background-color: transparent;
+  font-family: "Russo One", sans-serif;
+  font-size: 20px;
+  color: #a7fff8;
+  font-weight: bolder;
+  text-decoration: rgb(0, 255, 255);
+  box-shadow: 0 0 7px #d4fffd, 0 0 10px #a7fff8;
+  cursor: pointer;
+}
+
+.deleteBtn {
+  width: 50px;
+  height: 40px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 25px;
+  color: red;
+}
+
+.deleteBtn:hover {
+  box-shadow: none;
 }

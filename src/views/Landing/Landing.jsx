@@ -3,10 +3,11 @@ import { useNavigate } from "react-router-dom";
 import useData from "../../hooks/useData";
 
 export default function Landing() {
-  const { fetchVideogamesData } = useData();
+  const { fetchVideogamesData, genresData } = useData();
 
   const handleClick = () => {
     fetchVideogamesData();
+    genresData();
     navigate("/home");
   };
 

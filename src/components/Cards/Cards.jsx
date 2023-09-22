@@ -1,20 +1,20 @@
 import styles from "./Cards.module.css";
 import { useState } from "react";
-import { useSelector } from "react-redux";
-import { getVideogames } from "../../redux/sliceVideogames";
+import useFilterData from "../../hooks/useFilterData";
 import { useNavigate } from "react-router-dom";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 import GameCard from "../GameCard/GameCard";
 
 export default function Cards() {
   const navigate = useNavigate();
-  const videogames = useSelector(getVideogames);
+  const { renderVideogames } = useFilterData();
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const activateSpinner = videogames.length;
+  const activateSpinner = renderVideogames.length;
   const itemsPerPage = 15;
-  const totalSlides = Math.floor(videogames.length / itemsPerPage);
+  const totalSlides = Math.floor(renderVideogames.length / itemsPerPage);
   const isFirstPage = currentSlide === 0;
   const isLastPage = currentSlide === totalSlides - 1;
 
@@ -34,8 +34,8 @@ export default function Cards() {
         <div className={styles.container}>
           <div className={styles.container}>
             <div className={styles.cardsContainer}>
-              {videogames.length &&
-                videogames
+              {renderVideogames.length &&
+                renderVideogames
                   .slice(
                     currentSlide * itemsPerPage,
                     (currentSlide + 1) * itemsPerPage
@@ -47,31 +47,30 @@ export default function Cards() {
                       image={game.image}
                       name={game.name}
                       genres={game.genres}
+                      rating={game.rating}
                       onActionClick={() => navigate("/game-detail/" + game.id)}
                     />
                   ))}
             </div>
           </div>
 
-          <div className="absolute -top-16 right-8">
-            <button
-              onClick={handlePrevSlide}
-              className={`${styles.button} ${
-                isFirstPage ? styles.disabled : ""
-              }`}
-              disabled={isFirstPage}
-            >
-              Anterior
-            </button>
-            <button
-              onClick={handleNextSlide}
-              className={`${styles.button} ${
-                isLastPage ? styles.disabled : ""
-              }`}
-              disabled={isLastPage}
-            >
-              Siguiente
-            </button>
+          <div className={styles.buttonContainer}>
+            <div onClick={handlePrevSlide}>
+              <FiChevronLeft
+                className={`${styles.button} ${
+                  isFirstPage ? styles.disabled : ""
+                }`}
+                disabled={isFirstPage}
+              />
+            </div>
+            <div onClick={handleNextSlide}>
+              <FiChevronRight
+                className={`${styles.button} ${
+                  isLastPage ? styles.disabled : ""
+                }`}
+                disabled={isLastPage}
+              />
+            </div>
           </div>
         </div>
       ) : (

@@ -3,7 +3,9 @@
   margin: 0 auto;
   height: max-content;
   text-align: center;
-  background-color: #1c1c1c;
+  background-image: url("./assets/landing-bg.png");
+  background-size: cover;
+  background-position: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {

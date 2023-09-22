@@ -1,24 +1,25 @@
 import styles from "./NavBar.module.css";
-// import { useState } from "react";
+import logo from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
-// import { GiHamburgerMenu } from "react-icons/gi";
+import { useState } from "react";
+import useData from "../../hooks/useData";
+
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Buttons from "../../components/Buttons/Buttons";
-import logo from "../../assets/logo.png";
-import useData from "../../hooks/useData";
+import FiltersBar from "../../components/FiltersBar/FiltersBar";
 
 export default function NavBar() {
   const { onSearch } = useData();
   const navigate = useNavigate();
-  // const [showButtons, setShowButtons] = useState(false);
+  const [isFilterBarOpen, setIsFilterBarOpen] = useState(false);
 
-  function useToHome() {
-    navigate("/");
-  }
+  const useToHome = () => {
+    navigate("/home");
+  };
 
-  // function toggleButtons() {
-  //   setShowButtons(!showButtons);
-  // }
+  const handleSideBar = () => {
+    setIsFilterBarOpen(!isFilterBarOpen);
+  };
 
   return (
     <div className={styles.navBar}>
@@ -28,20 +29,10 @@ export default function NavBar() {
         <div className={styles.searchBar}>
           <SearchBar onSearch={onSearch} />
         </div>
-        {/* <button
-          className="md:hidden text-3xl text-primary-800 absolute right-7 mt-20"
-          onClick={toggleButtons}
-        >
-          <GiHamburgerMenu />
-        </button>
+
+        <Buttons handleSideBar={handleSideBar} />
       </div>
-      <div
-        className={`${
-          showButtons ? "flex" : "hidden"
-        } md:flex items-center mt-5`}
-      > */}
-        <Buttons />
-      </div>
+      {isFilterBarOpen && <FiltersBar handleSideBar={handleSideBar} />}
     </div>
   );
 }
