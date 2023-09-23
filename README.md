@@ -32,15 +32,13 @@ Todo el Backend fue creado con Express uilizando bases de datos de PostgreSQL y 
 ## Construido con
 
 ### Tecnologias usadas para la API
-![Django Rest](https://img.shields.io/badge/django_rest_-3.14.0-ED1C24?style=for-the-badge&logo=django&logoColor=white)
 [![FL0](https://img.shields.io/badge/Render-000000?style=for-the-badge&logo=FL0&logoColor=white)](https://www.fl0.com/) 
 [![PostImages](https://img.shields.io/badge/PostImages-000000?style=for-the-badge&logo=FL0&logoColor=white)](https://postimages.org/) 
-![PostImg](https://img.shields.io/badge/PostImg-00000?style=for-the-badge&logo=googlecloud&color=white)
-![Sequelize](https://img.shields.io/badge/Sequelize-00000?style=for-the-badge&logo=gunicorn&logoColor=green&color=white)
+![Sequelize](https://img.shields.io/badge/Sequelize-00000?style=for-the-badge&logo=sequelize&logoColor=green&color=white)
 ![POSTGRESQL](https://img.shields.io/badge/PostgreSQL-00000?style=for-the-badge&logo=postgresql&logoColor=blue&color=white)
 ![Git](https://img.shields.io/badge/git-00000?style=for-the-badge&logo=git&color=white)
 
 ### Tecnologías usadas para la APP
-[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/) ![React Hook Forms](https://img.shields.io/badge/react_hook_forms-ffc0cb?style=for-the-badge&logo=reacthookform&logoColor=white)
+[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/) ![React Hook Forms]
 ![ESLint](https://img.shields.io/badge/ESLint-ADD8E6?style=for-the-badge&logo=eslint&logoColor=white)
 ![Vercel](https://img.shields.io/badge/vercel-00000?style=for-the-badge&logo=vercel&logoColor=black&color=white)
