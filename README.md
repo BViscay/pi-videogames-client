@@ -39,6 +39,6 @@ Todo el Backend fue creado con Express uilizando bases de datos de PostgreSQL y 
 ![Git](https://img.shields.io/badge/git-00000?style=for-the-badge&logo=git&color=white)
 
 ### Tecnologías usadas para la APP
-[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/) ![React Hook Forms]
+[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/)
 ![ESLint](https://img.shields.io/badge/ESLint-ADD8E6?style=for-the-badge&logo=eslint&logoColor=white)
 ![Vercel](https://img.shields.io/badge/vercel-00000?style=for-the-badge&logo=vercel&logoColor=black&color=white)
