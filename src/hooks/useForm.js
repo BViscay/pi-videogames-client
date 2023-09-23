@@ -28,16 +28,21 @@ const useForm = () => {
     // Validaciones
     if (
       !formData.name ||
+      !formData.image ||
       !formData.description ||
+      !formData.platforms ||
       !formData.released ||
       !formData.rating ||
-      !formData.image ||
-      !formData.released
+      !formData.genres
     ) {
       alert("Por favor, completa todos los campos.");
       return;
-    } else if (isNaN(formData.rating) && formData.rating > 5) {
-      alert("El rating debe ser un número menor a Cinco");
+    } else if (
+      isNaN(formData.rating) &&
+      formData.rating > 1 &&
+      formData.rating < 5
+    ) {
+      alert("El rating debe ser un número mayor a Uno y menor a Cinco");
       return;
     } else if (regexDate.test(formData.released)) {
       alert("La fecha debe ser YYYY/MM/DD");

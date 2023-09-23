@@ -41,3 +41,9 @@ button:hover {
   box-shadow: 0 0 7px #d4fffd, 0 0 10px #a7fff8;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .buttonsContainer {
+    margin-left: 70px;
+  }
+}

@@ -40,3 +40,24 @@
   padding-right: 20px;
   align-items: center;
 }
+
+@media (max-width: 768px) {
+  .navBar {
+    max-width: 420px;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    justify-content: center;
+    padding-left: 10px;
+  }
+  .navBarCont {
+    flex-direction: column;
+  }
+  .searchBar {
+    display: flex;
+    width: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+  }
+}

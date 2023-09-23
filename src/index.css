@@ -1,8 +1,10 @@
 :root {
+  height: max-content;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   padding: 50px;
+  background-image: url("./assets/landing-bg.png");
   background-size: cover;
   background-position: center;
   color-scheme: light dark;
@@ -25,7 +27,7 @@
 body {
   margin: 0;
   display: flex;
-  min-height: 100vh;
+  min-height: 90vh;
   place-items: center;
   min-width: 320px;
   background-size: cover;
@@ -45,10 +47,10 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
+@media (max-width: 768px) {
   :root {
     color: #213547;
-
+    width: 100%;
     background-size: cover;
     background-position: center;
   }

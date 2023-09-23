@@ -16,9 +16,9 @@ export default function GameCard({ gameId, image, name, genres, rating }) {
           <h3 className={styles.genres}>Generos:</h3>
           <div className={styles.genreContainer}>
             {genres.map((genre, index) => (
-              <ul key={index} className={styles.genre}>
+              <p key={index} className={styles.genre}>
                 {genre}
-              </ul>
+              </p>
             ))}
           </div>
           <p className={styles.rating}>Rating: {rating}</p>
