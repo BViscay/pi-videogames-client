@@ -32,7 +32,7 @@ Todo el Backend fue creado con Express uilizando bases de datos de PostgreSQL y 
 ## Construido con
 
 ### Tecnologias usadas para la API
-[![FL0](https://img.shields.io/badge/Render-000000?style=for-the-badge&logo=FL0&logoColor=white)](https://www.fl0.com/) 
+[![FL0](https://img.shields.io/badge/FL0-000000?style=for-the-badge&logo=FL0&logoColor=white)](https://www.fl0.com/) 
 [![PostImages](https://img.shields.io/badge/PostImages-000000?style=for-the-badge&logo=FL0&logoColor=white)](https://postimages.org/) 
 ![Sequelize](https://img.shields.io/badge/Sequelize-00000?style=for-the-badge&logo=sequelize&logoColor=green&color=white)
 ![POSTGRESQL](https://img.shields.io/badge/PostgreSQL-00000?style=for-the-badge&logo=postgresql&logoColor=blue&color=white)
