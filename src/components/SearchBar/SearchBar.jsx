@@ -1,17 +1,16 @@
 import styles from "./SearchBar.module.css";
 import { useState } from "react";
-import { getVideogames } from "../../redux/sliceVideogames";
+import { getRenderVideogames } from "../../redux/sliceFilters";
 import { useSelector } from "react-redux";
-import { BiSearchAlt } from "react-icons/bi";
 import useModal from "../../hooks/useModal";
-import FilterModal from "../FilterModal.jsx/FilterModal";
+import FilterModal from "../FilterModal/FilterModal";
 
 //eslint-disable-next-line
 export default function SearchBar({ onSearch }) {
   const [name, setName] = useState("");
   const { isModalOpen, handleCloseModal, handleOpenModal } = useModal();
 
-  const videogames = useSelector(getVideogames);
+  const videogames = useSelector(getRenderVideogames);
 
   const filteredVideogames = Array.from(
     new Set(videogames.map((vg) => vg.name))
@@ -58,7 +57,9 @@ export default function SearchBar({ onSearch }) {
           </datalist>
         ) : null}
         <button onClick={handleSearch} className={styles.searchButton}>
-          <BiSearchAlt />
+          <span className={`material-symbols-outlined ${styles.button}`}>
+            search
+          </span>
         </button>
       </div>
       {isModalOpen && <FilterModal onClose={handleCloseModal} />}

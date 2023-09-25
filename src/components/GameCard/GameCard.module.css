@@ -10,7 +10,7 @@
 .image {
   width: 250px;
   height: 150px;
-  box-shadow: 0 0 7px #fffff4, 0 0 10px #fff780;
+  box-shadow: 0 0 7px #fffff4;
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
   object-fit: cover;

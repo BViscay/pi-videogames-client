@@ -9,7 +9,7 @@
   flex-direction: row;
   align-items: center;
   background-color: transparent;
-  width: 400px;
+  width: 500px;
 }
 
 .searchBarInput {
@@ -26,12 +26,17 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  width: 37px;
-  height: 37px;
-  font-size: 35px;
+  padding: 0;
+  border-radius: 50px;
+  width: 32px;
+  height: 32px;
   color: #a7fff8;
   padding: 0;
   margin-left: 10px;
+}
+
+.button {
+  font-size: 30px;
 }
 
 @media (max-width: 768px) {

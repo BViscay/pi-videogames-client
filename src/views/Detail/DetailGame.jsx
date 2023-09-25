@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useData from "../../hooks/useData";
 import { useNavigate } from "react-router-dom";
-import { RiDeleteBin3Line } from "react-icons/ri";
 
 export default function DetailGame() {
   const { id } = useParams();
@@ -37,7 +36,9 @@ export default function DetailGame() {
               <p className={styles.id}>ID: {detVideogame.id}</p>
               {detVideogame.createInDb && (
                 <button className={styles.deleteBtn} onClick={handleClick}>
-                  <RiDeleteBin3Line />
+                  <span className="material-symbols-outlined">
+                    delete_forever
+                  </span>
                 </button>
               )}
             </div>

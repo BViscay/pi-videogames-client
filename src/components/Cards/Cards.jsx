@@ -2,7 +2,6 @@ import styles from "./Cards.module.css";
 import { useNavigate } from "react-router-dom";
 import useFilterData from "../../hooks/useFilterData";
 import usePagination from "../../hooks/usePagination";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 import GameCard from "../GameCard/GameCard";
 
@@ -39,12 +38,16 @@ export default function Cards() {
           <div className={styles.buttonContainer}>
             {hasPreviousPage && (
               <div onClick={prevPage}>
-                <FiChevronLeft className={styles.button} />
+                <span className={`material-symbols-outlined ${styles.button}`}>
+                  arrow_back_ios
+                </span>
               </div>
             )}
             {hasNextPage && (
               <div onClick={nextPage} className={styles.rightButton}>
-                <FiChevronRight className={styles.button} />
+                <span className={`material-symbols-outlined ${styles.rbutton}`}>
+                  arrow_forward_ios
+                </span>
               </div>
             )}
           </div>
