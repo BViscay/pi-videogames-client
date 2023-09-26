@@ -17,7 +17,7 @@ export default function OriginSelect({ handleSideBar }) {
   return (
     <select
       className={styles.select}
-      name="abecedaryOrder"
+      name="originOrder"
       onChange={handleOrderChange}
       value={selectedOrder}
     >
