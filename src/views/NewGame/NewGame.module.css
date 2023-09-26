@@ -91,7 +91,25 @@
   text-decoration: rgb(0, 255, 255);
   box-shadow: 0 0 7px #d4fffd, 0 0 10px #a7fff8;
   cursor: pointer;
-  z-index: 10;
+}
+
+.disabledBtn {
+  width: 125px;
+  height: 40px;
+  margin-top: 30px;
+  border-radius: 10px;
+  padding: 0;
+  background-color: transparent;
+  font-size: 20px;
+  color: #6a6d6d;
+  font-family: "Russo One", sans-serif;
+  font-weight: bolder;
+  box-shadow: 0 0 7px #b8b8b8, 0 0 10px #445f5d;
+}
+
+.disabledBtn:hover {
+  color: #6a6d6d;
+  box-shadow: 0 0 7px #b8b8b8, 0 0 10px #445f5d;
 }
 
 button:hover {

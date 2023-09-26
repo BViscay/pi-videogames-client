@@ -23,6 +23,7 @@ export default function FilterModal({ onClose }) {
                 image={game.image}
                 name={game.name}
                 genres={game.genres}
+                rating={game.rating}
                 onClick={() => navigate("/game-detail/" + game.id)}
               />
             ))}

@@ -2,14 +2,14 @@ import styles from "./NavBar.module.css";
 import logo from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import useData from "../../hooks/useData";
+import useFilterData from "../../hooks/useFilterData";
 
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Buttons from "../../components/Buttons/Buttons";
 import FiltersBar from "../../components/FiltersBar/FiltersBar";
 
 export default function NavBar() {
-  const { onSearch } = useData();
+  const { filterByName } = useFilterData();
   const navigate = useNavigate();
   const [isFilterBarOpen, setIsFilterBarOpen] = useState(false);
 
@@ -27,7 +27,7 @@ export default function NavBar() {
         <img src={logo} className={styles.navBarLogo} onClick={useToHome} />
 
         <div className={styles.searchBar}>
-          <SearchBar onSearch={onSearch} />
+          <SearchBar onSearch={filterByName} />
         </div>
 
         <Buttons handleSideBar={handleSideBar} />

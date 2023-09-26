@@ -31,6 +31,21 @@
   cursor: pointer;
 }
 
+.selectActive {
+  width: 150px;
+  height: 37px;
+  border-radius: 10px;
+  padding-left: 10px;
+  font-size: 18px;
+  font-family: "Russo One", sans-serif;
+  font-weight: bolder;
+  color: #a7fff8;
+  border: solid 1.5px rgb(247, 223, 180);
+  box-shadow: 0 0 7px #fffff4, 0 0 10px #fff780;
+  background-color: rgba(28, 28, 28, 0.95);
+  cursor: pointer;
+}
+
 .select::-webkit-scrollbar {
   width: 5px;
 }
@@ -38,21 +53,6 @@
 .select::-webkit-scrollbar-thumb {
   background-color: #a7fff8;
   border-radius: 6px;
-}
-
-.origin {
-  width: 20px;
-  height: 20px;
-  background-color: rgba(28, 28, 28, 0.9);
-  border-radius: 100px;
-  border: 2px solid #a7fff8;
-  color: #a7fff8;
-  font-family: "Russo One", sans-serif;
-  font-weight: bolder;
-  margin-right: 10px;
-  cursor: pointer;
-  border-radius: 4px;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .button {
@@ -68,6 +68,25 @@
   text-decoration: rgb(0, 255, 255);
   box-shadow: 0 0 7px #d4fffd, 0 0 10px #a7fff8;
   cursor: pointer;
+}
+
+.paragraph {
+  font-size: medium;
+  margin-left: 15px;
+  width: 150px;
+  margin-top: 15px;
+  margin-bottom: 0px;
+  padding-left: 0;
+  text-align: left;
+  color: #a5b5fb;
+}
+
+.list {
+  width: 80px;
+  font-weight: bold;
+  padding-left: 3px;
+  padding-right: 3px;
+  color: #a5b5fb;
 }
 
 @media (max-width: 768px) {

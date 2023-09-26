@@ -5,15 +5,14 @@ import {
   API_URL_GENRES,
   API_URL_DELETEVIDEOGAME,
 } from "../config/api";
-import { useDispatch, useSelector } from "react-redux";
-import { setVideogames, getVideogames } from "../redux/sliceVideogames";
+import { useDispatch } from "react-redux";
+import { setVideogames } from "../redux/sliceVideogames";
 import { setGenres } from "../redux/sliceGenres";
-import { setFilterByName } from "../redux/sliceFilters";
 import { useNavigate } from "react-router-dom";
 
 const useDataVideogames = () => {
   const dispatch = useDispatch();
-  const videogames = useSelector(getVideogames);
+
   const [detVideogame, setDetVideogame] = useState({});
   const navigate = useNavigate();
 
@@ -55,15 +54,6 @@ const useDataVideogames = () => {
     }
   };
 
-  const onSearch = (searchName) => {
-    const filterVideogame = videogames.filter((videogame) =>
-      videogame.name.toLowerCase().includes(searchName.toLowerCase())
-    );
-    console.log(filterVideogame);
-
-    dispatch(setFilterByName(filterVideogame));
-  };
-
   const deleteVideogame = async (id) => {
     try {
       const response = await axios.delete(`${API_URL_DELETEVIDEOGAME}/${id}`);
@@ -76,7 +66,6 @@ const useDataVideogames = () => {
   };
 
   return {
-    onSearch,
     fetchVideogamesData,
     genresData,
     detailVideogame,

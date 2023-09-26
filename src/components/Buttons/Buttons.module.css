@@ -16,8 +16,23 @@
   color: #a7fff8;
   font-family: "Russo One", sans-serif;
   font-weight: bolder;
-  text-decoration: rgb(0, 255, 255);
   box-shadow: 0 0 7px #d4fffd, 0 0 10px #a7fff8;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.activeBtn {
+  width: 125px;
+  height: 37px;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 18px;
+  font-family: "Russo One", sans-serif;
+  font-weight: bolder;
+  color: #a7fff8;
+  border: solid 1.5px rgb(247, 223, 180);
+  box-shadow: 0 0 7px #ffff9f, 0 0 10px #fff56d;
+  background-color: rgba(28, 28, 28, 0.95);
   cursor: pointer;
   z-index: 10;
 }
@@ -25,21 +40,6 @@
 button:hover {
   box-shadow: 0 0 7px #91fff9, 0 0 10px #0fa;
   color: #a5b5fb;
-}
-
-.select {
-  width: 125px;
-  height: 37px;
-  border-radius: 10px;
-  padding-left: 10px;
-  background-color: rgba(28, 28, 28, 0.95);
-  font-size: 18px;
-  color: #a7fff8;
-  font-family: "Russo One", sans-serif;
-  font-weight: bolder;
-  text-decoration: rgb(0, 255, 255);
-  box-shadow: 0 0 7px #d4fffd, 0 0 10px #a7fff8;
-  cursor: pointer;
 }
 
 @media (max-width: 768px) {

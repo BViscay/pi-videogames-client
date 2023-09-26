@@ -57,24 +57,24 @@ export default function DetailGame() {
             </div>
             <div className={styles.arrayCont}>
               <div>
-                <p className={styles.subtitle}>
+                <div className={styles.subtitle}>
                   Generos:{" "}
                   <span className={styles.resalt}>
                     {detVideogame.genres.map((genre, index) => (
                       <p key={index}>{genre}</p>
                     ))}
                   </span>
-                </p>
+                </div>
               </div>
               <div className={styles.platforms}>
-                <p className={styles.subtitle}>
+                <div className={styles.subtitle}>
                   Plataformas:
                   <span className={styles.resalt}>
                     {detVideogame.platforms?.map((platform, index) => (
                       <p key={index}>{platform}</p>
                     ))}
                   </span>
-                </p>
+                </div>
               </div>
             </div>
             <p className={styles.subtitle}>

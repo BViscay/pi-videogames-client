@@ -1,9 +1,8 @@
+import styles from "./FiltersBar.module.css";
 import useFilterData from "../../hooks/useFilterData";
 
 import FilterSelect from "./FilterSelect";
-import styles from "./FiltersBar.module.css";
 import GenreSelect from "./GenreSelect";
-
 import ResetFilters from "./ResetFilters";
 
 export default function FiltersBar({ handleSideBar }) {

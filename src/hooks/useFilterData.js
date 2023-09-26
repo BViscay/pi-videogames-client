@@ -4,6 +4,9 @@ import { getVideogames } from "../redux/sliceVideogames";
 import {
   getRenderVideogames,
   setRenderVideogames,
+  resetFiltersData,
+  setFiltersData,
+  setFilterByName,
 } from "../redux/sliceFilters";
 
 const useFilterData = () => {
@@ -18,6 +21,14 @@ const useFilterData = () => {
     //eslint-disable-next-line
   }, [allVideogames]);
 
+  const filterByName = (searchedName) => {
+    const filterVideogame = renderVideogames.filter((videogame) =>
+      videogame.name.toLowerCase().includes(searchedName.toLowerCase())
+    );
+
+    dispatch(setFilterByName(filterVideogame));
+  };
+
   const filterByGenre = (genre) => {
     if (genre === "Generos") {
       dispatch(setRenderVideogames(renderVideogames));
@@ -25,8 +36,8 @@ const useFilterData = () => {
       const genreFiltered = renderVideogames.filter((game) =>
         game.genres.includes(genre)
       );
-
       dispatch(setRenderVideogames(genreFiltered));
+      dispatch(setFiltersData(genre));
     }
   };
 
@@ -41,7 +52,7 @@ const useFilterData = () => {
         if (nameA < nameB) return -1;
         if (nameA > nameB) return 1;
       });
-
+      dispatch(setFiltersData(order));
       dispatch(setRenderVideogames(ascendentOrder));
     } else if (order === "Z-A") {
       const descendentOrder = [...renderVideogames];
@@ -51,7 +62,7 @@ const useFilterData = () => {
         if (nameA > nameB) return -1;
         if (nameA < nameB) return 1;
       });
-
+      dispatch(setFiltersData(order));
       dispatch(setRenderVideogames(descendentOrder));
     }
   };
@@ -67,6 +78,7 @@ const useFilterData = () => {
         if (nameA > nameB) return -1;
         if (nameA < nameB) return 1;
       });
+      dispatch(setFiltersData(rating));
       dispatch(setRenderVideogames(descendentOrder));
     } else if (rating === "Menor") {
       const ascendentOrder = [...renderVideogames];
@@ -76,6 +88,8 @@ const useFilterData = () => {
         if (nameA < nameB) return -1;
         if (nameA > nameB) return 1;
       });
+
+      dispatch(setFiltersData(rating));
       dispatch(setRenderVideogames(ascendentOrder));
     }
   };
@@ -87,21 +101,25 @@ const useFilterData = () => {
       const BDDFilter = allVideogames.filter(
         (videogame) => videogame.createInDb === true
       );
+      dispatch(setFiltersData(order));
       dispatch(setRenderVideogames(BDDFilter));
     } else if (order === "API") {
       const APIFilter = allVideogames.filter(
         (videogame) => !videogame.createInDb
       );
+      dispatch(setFiltersData(order));
       dispatch(setRenderVideogames(APIFilter));
     }
   };
 
   const resetFilters = () => {
+    dispatch(resetFiltersData([]));
     dispatch(setRenderVideogames(allVideogames));
   };
 
   return {
     renderVideogames,
+    filterByName,
     filterByGenre,
     filterByFirstLetter,
     filterByRating,

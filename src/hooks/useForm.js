@@ -20,50 +20,59 @@ const useForm = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+  };
+
+  //Validaciones del form
+  const validateFormData = () => {
+    if (
+      !formData.name ||
+      !formData.image ||
+      !formData.description ||
+      formData.platforms.length === 0 ||
+      !formData.released ||
+      !formData.rating ||
+      formData.genres.length === 0
+    ) {
+      alert("Por favor, completa todos los campos.");
+
+      return false;
+    } else if (
+      isNaN(formData.rating) ||
+      formData.rating <= 1 ||
+      formData.rating >= 5
+    ) {
+      alert("El rating debe ser un número mayor a Uno y menor a Cinco");
+      return false;
+    } else if (!regexDate.test(formData.released)) {
+      alert("La fecha debe ser YYYY/MM/DD");
+      return false;
+    }
+
+    return true;
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     // Validaciones
-    if (
-      !formData.name ||
-      !formData.image ||
-      !formData.description ||
-      !formData.platforms ||
-      !formData.released ||
-      !formData.rating ||
-      !formData.genres
-    ) {
-      alert("Por favor, completa todos los campos.");
-      return;
-    } else if (
-      isNaN(formData.rating) &&
-      formData.rating > 1 &&
-      formData.rating < 5
-    ) {
-      alert("El rating debe ser un número mayor a Uno y menor a Cinco");
-      return;
-    } else if (regexDate.test(formData.released)) {
-      alert("La fecha debe ser YYYY/MM/DD");
+    if (!validateFormData()) {
       return;
     } else {
-      await axios
-        .post(API_URL_VIDEOGAME, formData)
-        .then(({ data }) => {
-          if (data) {
-            alert("El videojuego ha sido creado con exito");
-            navigate("/home");
-          }
-        })
-        .catch((error) => {
-          if (error.response) {
-            console.log("Response Data:", error.response.data);
-          }
-        });
+      try {
+        const response = await axios.post(API_URL_VIDEOGAME, formData);
+        if (response.data) {
+          alert("El videojuego ha sido creado con éxito");
+          navigate("/home");
+        }
+      } catch (error) {
+        if (error.response) {
+          console.log("Response Data:", error.response.data);
+        }
+      }
     }
   };
 
   return { formData, handleChange, handleSubmit };
 };
+
 export default useForm;

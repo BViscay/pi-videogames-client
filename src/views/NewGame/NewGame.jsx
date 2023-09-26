@@ -60,18 +60,18 @@ export default function NewGame() {
                   onChange={handleChange}
                 ></input>
               </p>
-              <p className={styles.paragraph} type="Calificación:">
+              <p className={styles.paragraph} type="Imagen:">
                 <input
                   className={styles.input}
-                  name="rating"
-                  type="number"
-                  placeholder="Ingresa la calificación"
+                  name="image"
+                  type="text"
+                  placeholder="URL de la Imagen"
                   onChange={handleChange}
                 ></input>
               </p>
             </div>
             <div className={styles.column}>
-              <p className={styles.paragraph} type="Géneros:">
+              <div className={styles.paragraph} type="Géneros:">
                 <select
                   className={styles.select}
                   name="genres"
@@ -91,16 +91,7 @@ export default function NewGame() {
                     Géneros seleccionados: {selectedGenres.join(", ")}
                   </p>
                 </div>
-              </p>
-              <p className={styles.paragraph} type="Imagen:">
-                <input
-                  className={styles.input}
-                  name="image"
-                  type="text"
-                  placeholder="URL de la Imagen"
-                  onChange={handleChange}
-                ></input>
-              </p>
+              </div>
               <p className={styles.paragraph} type="Plataformas:">
                 <input
                   className={styles.input}
@@ -110,8 +101,18 @@ export default function NewGame() {
                   onChange={handlePlatformsChange}
                 ></input>
               </p>
+              <p className={styles.paragraph} type="Calificación:">
+                <input
+                  className={styles.input}
+                  name="rating"
+                  type="number"
+                  placeholder="Ingresa la calificación"
+                  onChange={handleChange}
+                ></input>
+              </p>
             </div>
           </div>
+
           <button type="submit" className={styles.button}>
             CREAR
           </button>

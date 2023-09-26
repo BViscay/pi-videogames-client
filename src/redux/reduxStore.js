@@ -5,8 +5,8 @@ import genresHandler from "./sliceGenres";
 
 export const store = configureStore({
   reducer: {
+    filterVg: filtersHandler,
     videogames: videogamesHandler,
     genres: genresHandler,
-    filterVg: filtersHandler,
   },
 });
