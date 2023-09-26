@@ -137,15 +137,17 @@ button:hover {
 }
 
 @media (max-width: 768px) {
+  .container {
+    width: 390px;
+  }
   .form {
     margin-top: 250px;
-    width: 350px;
-    margin-left: 35px;
+    width: 320px;
     padding-left: 10px;
   }
   .input {
-    width: 80%;
-    margin-left: -90px;
+    width: 70%;
+    margin-left: -100px;
   }
   .inputsContainer {
     display: flex;

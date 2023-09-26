@@ -77,3 +77,23 @@
   font-weight: bolder;
   text-decoration: rgb(0, 255, 255);
 }
+
+@media (max-width: 768px) {
+  .content {
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 370px;
+
+    align-items: flex-start;
+  }
+
+  .modal {
+    width: 320px;
+    height: 700px;
+    margin-left: 40px;
+  }
+
+  .cardsContainer {
+    width: 320px;
+  }
+}

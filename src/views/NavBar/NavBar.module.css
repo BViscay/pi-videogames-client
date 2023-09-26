@@ -43,7 +43,7 @@
 
 @media (max-width: 768px) {
   .navBar {
-    max-width: 420px;
+    max-width: 400px;
     justify-content: center;
     align-items: center;
     height: auto;

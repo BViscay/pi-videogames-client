@@ -144,20 +144,19 @@
 
 @media (max-width: 768px) {
   .bg {
-    height: 200vh;
+    height: 180vh;
     padding-bottom: 40px;
   }
   .container {
     flex-direction: column;
-    max-width: 45vh;
-    height: 170vh;
-    margin-left: 30px;
+    max-width: 340px;
+    height: 150vh;
     padding-bottom: 20px;
     margin-top: 30vh;
   }
 
   .img {
-    width: 45vh;
+    width: 340px;
     height: 40vh;
     object-fit: cover;
     border-top-right-radius: 25px;
@@ -166,8 +165,8 @@
   .dataContainer {
     display: flex;
     flex-direction: column;
-    width: 40vh;
-    height: 220vh;
+    width: 320px;
+    height: 120vh;
     padding-left: 10px;
   }
   .button {

@@ -45,7 +45,6 @@
 
 .buttonContainer {
   width: 100%;
-
   display: flex;
   justify-content: space-between;
   position: fixed;
@@ -101,7 +100,7 @@
     margin-top: 80px;
   }
   .buttonContainer {
-    width: 440px;
+    width: 400px;
   }
   .rightButton {
     align-self: flex-end;
