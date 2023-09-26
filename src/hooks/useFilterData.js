@@ -98,13 +98,13 @@ const useFilterData = () => {
     if (order === "Todos") {
       dispatch(setRenderVideogames(renderVideogames));
     } else if (order === "BDD") {
-      const BDDFilter = allVideogames.filter(
+      const BDDFilter = renderVideogames.filter(
         (videogame) => videogame.createInDb === true
       );
       dispatch(setFiltersData(order));
       dispatch(setRenderVideogames(BDDFilter));
     } else if (order === "API") {
-      const APIFilter = allVideogames.filter(
+      const APIFilter = renderVideogames.filter(
         (videogame) => !videogame.createInDb
       );
       dispatch(setFiltersData(order));
