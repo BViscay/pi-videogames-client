@@ -11,7 +11,7 @@ export default function Buttons({ handleSideBar }) {
   return (
     <div className={styles.buttonsContainer}>
       <div>
-        <CreateGameButton />
+        <CreateGameButton handleSideBar={handleSideBar} />
       </div>
 
       {isHomePage && (

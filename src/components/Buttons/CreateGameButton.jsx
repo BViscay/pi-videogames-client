@@ -1,10 +1,11 @@
 import styles from "./Buttons.module.css";
 import { useNavigate } from "react-router-dom";
 
-export default function CreateGameButton() {
+export default function CreateGameButton({ handleSideBar }) {
   const navigate = useNavigate();
 
   const handleClick = () => {
+    handleSideBar();
     navigate("/new-game");
   };
 
