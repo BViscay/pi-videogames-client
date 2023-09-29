@@ -45,7 +45,7 @@ const useForm = () => {
       alert("El rating debe ser un número mayor a Uno y menor a Cinco");
       return false;
     } else if (!regexDate.test(formData.released)) {
-      alert("La fecha debe ser YYYY/MM/DD");
+      alert("La fecha debe ser YYYY-MM-DD");
       return false;
     }
 
