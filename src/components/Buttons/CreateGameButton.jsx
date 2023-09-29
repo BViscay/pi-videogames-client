@@ -1,11 +1,14 @@
 import styles from "./Buttons.module.css";
 import { useNavigate } from "react-router-dom";
 
-export default function CreateGameButton({ handleSideBar }) {
+export default function CreateGameButton({ handleSideBar, isFilterBarOpen }) {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    handleSideBar();
+    if (isFilterBarOpen) {
+      // Si la barra de filtros está abierta, ciérrala
+      handleSideBar();
+    }
     navigate("/new-game");
   };
 

@@ -30,7 +30,10 @@ export default function NavBar() {
           <SearchBar onSearch={filterByName} />
         </div>
 
-        <Buttons handleSideBar={handleSideBar} />
+        <Buttons
+          handleSideBar={handleSideBar}
+          isFilterBarOpen={isFilterBarOpen}
+        />
       </div>
       {isFilterBarOpen && <FiltersBar handleSideBar={handleSideBar} />}
     </div>

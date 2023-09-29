@@ -3,7 +3,7 @@ import CreateGameButton from "./CreateGameButton";
 import FiltersButton from "./FiltersButton";
 import { useLocation } from "react-router-dom";
 
-export default function Buttons({ handleSideBar }) {
+export default function Buttons({ handleSideBar, isFilterBarOpen }) {
   const location = useLocation();
 
   const isHomePage = location.pathname === "/home";
@@ -11,7 +11,10 @@ export default function Buttons({ handleSideBar }) {
   return (
     <div className={styles.buttonsContainer}>
       <div>
-        <CreateGameButton handleSideBar={handleSideBar} />
+        <CreateGameButton
+          handleSideBar={handleSideBar}
+          isFilterBarOpen={isFilterBarOpen}
+        />
       </div>
 
       {isHomePage && (
