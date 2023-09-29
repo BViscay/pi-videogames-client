@@ -67,8 +67,6 @@ const useDataVideogames = () => {
   };
 
   const updateVideogame = async (id, newRating) => {
-    console.log(id);
-    console.log(newRating);
     try {
       const response = await axios.patch(`${API_URL_UPDATEVIDEOGAME}/${id}`, {
         newRating: newRating,
