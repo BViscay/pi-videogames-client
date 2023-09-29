@@ -2,9 +2,9 @@ import { useState } from "react";
 import { API_URL_VIDEOGAME } from "../config/api";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { formValidation } from "../config/formValidation";
 
 const useForm = () => {
-  const regexDate = /^\d{4}-\d{2}-\d{2}$/;
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -17,45 +17,20 @@ const useForm = () => {
     genres: [],
     createInDb: true,
   });
+  const [errors, setErrors] = useState({});
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
-  };
-
-  //Validaciones del form
-  const validateFormData = () => {
-    if (
-      !formData.name ||
-      !formData.image ||
-      !formData.description ||
-      formData.platforms.length === 0 ||
-      !formData.released ||
-      !formData.rating ||
-      formData.genres.length === 0
-    ) {
-      alert("Por favor, completa todos los campos.");
-
-      return false;
-    } else if (
-      isNaN(formData.rating) ||
-      formData.rating <= 1 ||
-      formData.rating >= 5
-    ) {
-      alert("El rating debe ser un número mayor a Uno y menor a Cinco");
-      return false;
-    } else if (!regexDate.test(formData.released)) {
-      alert("La fecha debe ser YYYY-MM-DD");
-      return false;
-    }
-
-    return true;
+    setFormData({ ...formData, [name]: value });
+    setErrors(formValidation({ ...formData, [name]: value }));
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // Validaciones
-    if (!validateFormData()) {
+    const errors = formValidation(formData);
+
+    if (Object.keys(errors).length > 0) {
+      alert("Por favor, corrige los errores en el formulario.");
       return;
     } else {
       try {
@@ -72,7 +47,7 @@ const useForm = () => {
     }
   };
 
-  return { formData, handleChange, handleSubmit };
+  return { formData, errors, handleChange, handleSubmit };
 };
 
 export default useForm;

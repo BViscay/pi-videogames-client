@@ -41,11 +41,20 @@
 .inputsContainer {
   display: flex;
   width: 820px;
-  gap: 25px;
+  gap: 0;
 }
 
 .column {
   width: 50%;
+}
+
+.inputErrorCont {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  margin-bottom: -20px;
+  height: max-content;
+  width: 90%;
 }
 
 .input {
@@ -152,6 +161,14 @@ button:hover {
   text-align: left;
   font-size: 14px;
   color: #a5b5fb;
+}
+
+.errors {
+  width: 100%;
+  color: red;
+  margin-bottom: -7px;
+  text-align: left;
+  font-size: 12px;
 }
 
 @media (max-width: 768px) {

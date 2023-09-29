@@ -4,6 +4,7 @@ import {
   API_URL_VIDEOGAMES,
   API_URL_GENRES,
   API_URL_DELETEVIDEOGAME,
+  API_URL_UPDATEVIDEOGAME,
 } from "../config/api";
 import { useDispatch } from "react-redux";
 import { setVideogames } from "../redux/sliceVideogames";
@@ -65,11 +66,31 @@ const useDataVideogames = () => {
     }
   };
 
+  const updateVideogame = async (id, newRating) => {
+    console.log(id);
+    console.log(newRating);
+    try {
+      const response = await axios.patch(`${API_URL_UPDATEVIDEOGAME}/${id}`, {
+        newRating: newRating,
+      });
+      if (response.data.id === id) {
+        window.alert(
+          `El videogame ${response.data.name} tiene un nuevo rating: ${response.data.rating}`
+        );
+        navigate("/home");
+      }
+    } catch (error) {
+      console.error(error);
+      window.alert("Error al cambiar el rating del videogame");
+    }
+  };
+
   return {
     fetchVideogamesData,
     genresData,
     detailVideogame,
     deleteVideogame,
+    updateVideogame,
     detVideogame,
   };
 };

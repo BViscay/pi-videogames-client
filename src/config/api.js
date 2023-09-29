@@ -9,3 +9,5 @@ export const API_URL_VIDEOGAMES = API_URL_BASE + "/videogames";
 export const API_URL_GENRES = API_URL_BASE + "/genres";
 
 export const API_URL_DELETEVIDEOGAME = API_URL_VIDEOGAME + "/delete";
+
+export const API_URL_UPDATEVIDEOGAME = API_URL_VIDEOGAME + "/update";

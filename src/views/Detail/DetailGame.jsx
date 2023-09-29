@@ -1,13 +1,16 @@
 import styles from "./DetailGame.module.css";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import useData from "../../hooks/useData";
 import { useNavigate } from "react-router-dom";
+import useData from "../../hooks/useData";
+import useModal from "../../hooks/useModal";
+import ChangeRating from "../../components/ChangeRatingModal/ChangeRating";
 
 export default function DetailGame() {
   const { id } = useParams();
   const navigate = useNavigate();
   const { detailVideogame, deleteVideogame, detVideogame } = useData();
+  const { isModalOpen, handleCloseModal, handleOpenModal } = useModal();
 
   useEffect(() => {
     if (!detVideogame.id) {
@@ -81,16 +84,24 @@ export default function DetailGame() {
               Fecha de Presentación:{" "}
               <span className={styles.resalt}>{detVideogame.released}</span>
             </p>
-            <p className={styles.subtitle}>
-              Puntuación:{" "}
-              <span className={styles.resalt}>{detVideogame.rating}</span>
-            </p>
+            <div className={styles.modifyCont}>
+              <p className={styles.subtitle}>
+                Puntuación:{" "}
+                <span className={styles.resalt}>{detVideogame.rating}</span>
+              </p>
+              {detVideogame.createInDb && (
+                <button className={styles.modifyBtn} onClick={handleOpenModal}>
+                  <span className="material-symbols-outlined">edit</span>
+                </button>
+              )}
+            </div>
           </div>
           <button className={styles.button} onClick={() => navigate("/home")}>
             X
           </button>
         </div>
       )}
+      {isModalOpen && <ChangeRating onClose={handleCloseModal} id={id} />}
     </div>
   );
 }
