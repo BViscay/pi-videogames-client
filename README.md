@@ -1,6 +1,6 @@
 <div align="center">
-![EG Portada](https://github.com/BViscay/pi-videogames-client/assets/126488071/4b36ee5d-92af-4cf4-ae1a-5ae295af13bf)
 
+![EG Portada](https://github.com/BViscay/pi-videogames-client/assets/126488071/f4af681e-28bd-4bfb-aed7-dafad7eae61b)
 
 <div align="left">
 # Introducción
