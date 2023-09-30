@@ -37,10 +37,6 @@ export const formValidation = (formData) => {
     errors.platforms = "Selecciona al menos una plataforma";
   }
 
-  if (!formData.released) {
-    errors.released = "El campo fecha es obligatorio";
-  }
-
   if (!formData.genres.length === 0) {
     errors.genres = "Selecciona al menos un género";
   }
