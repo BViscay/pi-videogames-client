@@ -31,6 +31,7 @@ Todo el Backend fue creado con Express uilizando bases de datos de PostgreSQL y 
 - "/videogames/:id" para acceder a la información de un videogame en específico
 - "/videogame" para la creación de un videogame desde el Cliente
 - "/videogame/delete/:id" para borrar un videogame de la BDD accediendo con el ID
+- "/videogame/update/:id" para modificar un videogame de la BDD accediendo con el ID
 
 ## Construido con
 
