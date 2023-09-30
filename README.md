@@ -1,9 +1,6 @@
-# PI Videogames
-
 <div align="center">
-  <h3><em>Explore Games</em></h3>
 
-  ![logo](https://github.com/BViscay/pi-videogames-client/assets/126488071/09e71831-9eb6-4a73-bf40-ddb8ad909e6d)
+ ![logo](https://github.com/BViscay/pi-videogames-client/assets/126488071/09e71831-9eb6-4a73-bf40-ddb8ad909e6d)
 
 <div align="left">
 # Introducción
