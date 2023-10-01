@@ -1,9 +1,7 @@
-# PI Videogames
-
 <div align="center">
-  <h3><em>Explore Games</em></h3>
-  ![Logo](./src/assets/logo.png)
-  
+
+![EG Portada](https://github.com/BViscay/pi-videogames-client/assets/126488071/f4af681e-28bd-4bfb-aed7-dafad7eae61b)
+
 <div align="left">
 # Introducción
 
@@ -33,6 +31,7 @@ Todo el Backend fue creado con Express uilizando bases de datos de PostgreSQL y 
 - "/videogames/:id" para acceder a la información de un videogame en específico
 - "/videogame" para la creación de un videogame desde el Cliente
 - "/videogame/delete/:id" para borrar un videogame de la BDD accediendo con el ID
+- "/videogame/update/:id" para modificar un videogame de la BDD accediendo con el ID
 
 ## Construido con
 
