@@ -13,6 +13,7 @@ export default function Buttons({ handleSideBar, isFilterBarOpen }) {
 
   return (
     <div className={styles.buttonsContainer}>
+      <AboutButton />
       {isHomePage && (
         <div>
           <CreateGameButton
@@ -33,7 +34,6 @@ export default function Buttons({ handleSideBar, isFilterBarOpen }) {
           <FiltersButton handleSideBar={handleSideBar} />
         </div>
       )}
-      <AboutButton />
     </div>
   );
 }
