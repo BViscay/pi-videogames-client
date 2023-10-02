@@ -1,6 +1,6 @@
 export const regexDate = /^\d{4}-\d{2}-\d{2}$/;
 
-export const regexName = /^[a-zA-Z\s]{5,25}$/;
+export const regexName = /^[a-zA-Z0-9\s]{5,25}$/;
 
 export const regexImgUrl = /^(https?:\/\/)/i;
 
